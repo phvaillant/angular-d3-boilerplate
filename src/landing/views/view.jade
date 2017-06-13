@@ -1,14 +1,16 @@
 h1 Users
 
-div.main-user 
+div.main-user(ng-repeat="user in users")
 	div.info-user
 		div.initials-container
-			div.initials PV
+			div.initials {{user.initials}}
 		div.info-center
 			div.username 
-				p phvaillant
+				p {{user.username}}
 			div.roles
-				p Roles: Administrator
+				p
+					a Roles:
+					a(ng-repeat="role in user.roles | filter : {'selected' : 'true'}")   {{role.name + " "}}
 		div.button-edit.button-container
 			p.button.-blue(ng-click="isEditFormOpen = !isEditFormOpen") Edit
 
@@ -22,13 +24,8 @@ div.main-user
 			div.title-roles
 				p ROLES
 			div.check-roles
+				div(ng-repeat="role in user.roles")
+					input(type="checkbox" name="role" ng-checked="{{role.selected}}" ng-model="role.selected")
+					label {{role.name}}
 				div
-					input(type="checkbox")
-					label.checkbox DIRECTOR
-				div
-					input(type="checkbox")
-					label.checkbox MANAGER
-				div
-					input(type="checkbox")
-					label.checkbox USER
 				

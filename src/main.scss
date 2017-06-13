@@ -19,6 +19,7 @@ $font-face: 'Overpass', sans-serif;
 .main-user {
 	margin-right: auto;
 	margin-left: auto;
+	margin-top: 20px;
 	max-width: 800px;
 }
 
@@ -27,7 +28,7 @@ h1 {
 }
 
 .edit-user {
-	height: 120px;
+	height: 140px;
 }
 
 .edit-username {
@@ -37,7 +38,7 @@ h1 {
 }
 
 .edit-roles {
-	height: 70px;
+	height: 90px;
 	display: flex;
 	margin: 20px;
 }
@@ -198,8 +199,7 @@ label {
 input {
   display: inline-block;
   font-weight: 100;
-  //padding: 15px;
-  //margin: 5px 0;
+  //text-overflow: ellipsis;
   font-size: 1rem;
   font-weight: 100;
   color: #475B62;
