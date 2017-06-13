@@ -1,2 +1,34 @@
-h1 Hello!
-pre {{ users|json }}
+h1 Users
+
+div.main-user 
+	div.info-user
+		div.initials-container
+			div.initials PV
+		div.info-center
+			div.username 
+				p phvaillant
+			div.roles
+				p Roles: Administrator
+		div.button-edit.button-container
+			p.button.-blue(ng-click="isEditFormOpen = !isEditFormOpen") Edit
+
+	div.edit-user(ng-show="isEditFormOpen")
+		div.edit-username
+			div.title-username
+				p USERNAME
+			div.enter-username
+				input(type="text" name="userName" ng-model='user.username' user-name-validation required)
+		div.edit-roles
+			div.title-roles
+				p ROLES
+			div.check-roles
+				div
+					input(type="checkbox")
+					label.checkbox DIRECTOR
+				div
+					input(type="checkbox")
+					label.checkbox MANAGER
+				div
+					input(type="checkbox")
+					label.checkbox USER
+				
